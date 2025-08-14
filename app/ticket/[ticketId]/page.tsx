@@ -15,12 +15,14 @@ const TicketPage = async ({ params }: TicketParamsProp) => {
   const ticket = await tickets.find((ticket) => ticket.id === ticketId);
   if (!ticket) {
     return (
-      <Button asChild variant={"outline"}>
-        <Placeholder
-          label="Ticket not found"
-          button={<Link href={ticketsPath()}>Go to the Tickets</Link>}
-        />
-      </Button>
+      <Placeholder
+        label="Ticket not found"
+        button={
+          <Button asChild variant={"outline"}>
+            <Link href={ticketsPath()}>Go to the Tickets</Link>
+          </Button>
+        }
+      />
     );
   }
   return <div>TicketPage({ticket.id})</div>;

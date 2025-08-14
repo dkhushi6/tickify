@@ -1,9 +1,9 @@
 import { LucideMessageCircleWarning } from "lucide-react";
-import React, { cloneElement, JSX } from "react";
+import React, { cloneElement, JSX, ReactElement } from "react";
 type PlaceholderProps = {
   label: string;
-  icon?: JSX.Element;
-  button?: JSX.Element;
+  icon?: ReactElement<{ className?: string }>;
+  button?: ReactElement<{ className?: string }>;
 };
 const Placeholder = ({
   icon = <LucideMessageCircleWarning />,
