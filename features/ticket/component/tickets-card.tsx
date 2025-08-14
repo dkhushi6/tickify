@@ -37,8 +37,8 @@ const TicketsCard = ({ ticket }: TicketProps) => {
     </Button>
   );
   return (
-    <div className="w-full max-w-[450px] flex space-x-2">
-      <Card key={ticket.id} className=" px-3 py-2 w-full  turncate     ">
+    <div className="w-full max-w-[450px] flex space-x-2 ">
+      <Card key={ticket.id} className=" px-3 py-2 w-full  turncate    ">
         <CardTitle className="flex justify-between pt-2">
           <div className="text-lg font-semibold">{ticket.title}</div>
           <div>{TicketIcons[ticket.status]}</div>
