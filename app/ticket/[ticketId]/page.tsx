@@ -2,6 +2,7 @@ import { tickets } from "@/app/data";
 import { ticketsPath } from "@/app/path";
 import Placeholder from "@/components/placeholder";
 import { Button, buttonVariants } from "@/components/ui/button";
+import TicketsCard from "@/features/ticket/component/tickets-card";
 import Link from "next/link";
 
 import React from "react";
@@ -25,7 +26,11 @@ const TicketPage = async ({ params }: TicketParamsProp) => {
       />
     );
   }
-  return <div>TicketPage({ticket.id})</div>;
+  return (
+    <div className="flex items-center justify-center animate-fade-in-from-top">
+      <TicketsCard ticket={ticket} isDetail />
+    </div>
+  );
 };
 
 export default TicketPage;

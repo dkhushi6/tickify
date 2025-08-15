@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { buttonVariants } from "./ui/button";
 import { Tickets } from "lucide-react";
+import ThemeSwitcher from "./themes/theme-switcher";
 
 const Navbar = () => {
   return (
@@ -18,7 +19,8 @@ const Navbar = () => {
           </div>
         </Link>
       </div>
-      <div>
+      <div className="flex gap-2">
+        <ThemeSwitcher />
         <Link
           href={ticketsPath()}
           className={buttonVariants({ variant: "outline" })}
