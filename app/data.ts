@@ -1,4 +1,4 @@
-export const tickets = [
+export const initialTiickets = [
   {
     id: "TCK-001",
     title: "Rock Concert 2025",
