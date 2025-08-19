@@ -6,6 +6,7 @@ import {
   CardFooter,
   CardTitle,
 } from "@/components/ui/card";
+import { Ticket } from "@prisma/client";
 import clsx from "clsx";
 import {
   ExternalLink,
@@ -15,14 +16,14 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import React from "react";
-import { TicketProp } from "../types";
+// import { TicketProp } from "../types";
 const TicketIcons = {
   open: <LockKeyholeOpen />,
   done: <LockKeyhole />,
   progress: <LoaderPinwheel />,
 };
 
-type TicketProps = { ticket: TicketProp; isDetail?: Boolean };
+type TicketProps = { ticket: Ticket; isDetail?: Boolean };
 
 const TicketsCard = ({ ticket, isDetail }: TicketProps) => {
   const detailButton = (
