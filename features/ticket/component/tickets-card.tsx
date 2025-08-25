@@ -25,7 +25,7 @@ type TicketProps = { ticket: Ticket; isDetail?: Boolean };
 const TicketsCard = ({ ticket, isDetail }: TicketProps) => {
   const detailButton = (
     <Button asChild variant={"outline"}>
-      <Link href={ticketPath(ticket.id)}>
+      <Link prefetch href={ticketPath(ticket.id)}>
         <ExternalLink />
       </Link>
     </Button>
