@@ -1,4 +1,4 @@
-import { ticketPath } from "@/app/path";
+import { ticketEditPath, ticketPath } from "@/app/path";
 import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 import { Ticket } from "@prisma/client";
@@ -9,11 +9,11 @@ import {
   LockKeyhole,
   LockKeyholeOpen,
   LucideTrash,
+  Pencil,
 } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import { DeleteTicket } from "../actions/delete-ticket";
-// import { TicketProp } from "../types";
 const TicketIcons = {
   open: <LockKeyholeOpen />,
   done: <LockKeyhole />,
@@ -30,11 +30,16 @@ const TicketsCard = ({ ticket, isDetail }: TicketProps) => {
       </Link>
     </Button>
   );
-
+  const editButton = (
+    <Button variant={"outline"}>
+      <Link prefetch href={ticketEditPath(ticket.id)}>
+        <Pencil className="h-4 w-4" />
+      </Link>
+    </Button>
+  );
   const deleteButton = (
     <form action={DeleteTicket.bind(null, ticket.id)}>
       <Button variant={"outline"}>
-        {" "}
         <LucideTrash className="h-4 w-4" />
       </Button>
     </form>
@@ -60,7 +65,17 @@ const TicketsCard = ({ ticket, isDetail }: TicketProps) => {
         </CardDescription>
       </Card>
       <div className="flex flex-col gap-y-1">
-        {isDetail ? deleteButton : detailButton}{" "}
+        {isDetail ? (
+          <>
+            {editButton}
+            {deleteButton}
+          </>
+        ) : (
+          <>
+            {editButton}
+            {detailButton}
+          </>
+        )}{" "}
       </div>
     </div>
   );

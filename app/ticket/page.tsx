@@ -12,20 +12,17 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import TicketCreateForm from "@/features/ticket/component/ticket-create-form";
+import CardCompact from "@/components/card-compact";
 const TicketsPage = async () => {
   return (
     <div className="flex-1 flex flex-col gap-y-8">
-      <Heading title={"TicketsPage"} desc={"All tickets at one place"} />
-      <Card className="w-full max-w-[600px] self-center">
-        {" "}
-        <CardHeader>
-          <CardTitle>Create a new Ticket</CardTitle>
-          <CardDescription>New ticket will be generated</CardDescription>{" "}
-        </CardHeader>
-        <CardContent>
-          <TicketCreateForm />
-        </CardContent>
-      </Card>
+      <Heading title={"TicketsPage"} desc={"All tickets at one place"} />{" "}
+      <CardCompact
+        title="Create a new Ticket"
+        description="New ticket will be generated"
+        content={<TicketCreateForm />}
+        className="w-full max-w-[600px] self-center"
+      />
       <Suspense fallback={<Spinner />}>
         <TicketList />
       </Suspense>
