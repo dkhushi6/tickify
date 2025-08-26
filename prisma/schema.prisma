@@ -21,8 +21,8 @@ model Ticket{
   description String @db.VarChar(1024)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt()
-  price Int
-  location String
+  price Int?
+  location String?
   status TicketStatus @default(open)
 
 }
