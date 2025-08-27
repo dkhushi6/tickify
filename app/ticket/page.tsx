@@ -11,8 +11,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import TicketCreateForm from "@/features/ticket/component/ticket-create-form";
 import CardCompact from "@/components/card-compact";
+import TicketUpsertForm from "@/features/ticket/component/ticket-upsert-form";
 const TicketsPage = async () => {
   return (
     <div className="flex-1 flex flex-col gap-y-8">
@@ -20,7 +20,7 @@ const TicketsPage = async () => {
       <CardCompact
         title="Create a new Ticket"
         description="New ticket will be generated"
-        content={<TicketCreateForm />}
+        content={<TicketUpsertForm />}
         className="w-full max-w-[600px] self-center"
       />
       <Suspense fallback={<Spinner />}>
